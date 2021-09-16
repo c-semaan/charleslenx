@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+
+
+
+/*Global configuration. Setting box sizing border-box to included padding and margin in the element size.*/
+
+* {
+    box-sizing: border-box; 
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1, h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin:  10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    width: 100%; /*Restrain image size to be equal to container size*/
+    
+}
+
+.navbar {
+    background-color: #047aed;
+    color: #fff;
+    height: 70px;
+
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto; /* 0 top and bottom and auto on left and right*/
+    overflow: auto; /* sets the desired behavior for an element's overflow — i.e. when an element's content is too big to fit in its block formatting context — in both directions.*/
+    padding: 0 40px;
+    
+    }
+
+.flex {
+        display: flex;
+    }
