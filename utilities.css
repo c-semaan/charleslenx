@@ -17,8 +17,55 @@
     color: #fff;
     border: 0px;
     border-radius: 5px;
-    
+    }
+.bg-primary,
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+.bg-secondary,
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+.bg-dark,
+.btn-dark {
+    background-color: var(--dark-color);
+    color: white;
+}
+.bg-light,
+.btn-light {
+    background-color: var(--light-color);
+    color: #333;
+}
 
+.bg-primary a,
+.btn-primary a,
+.bg-secondary a,
+.btn-secondary a,
+.bg-dark a,
+.btn-dark a{
+color: white;
+}
+
+
+/* Text sizes */
+.lead {
+    font-size:20px;
+}
+.sm {
+    font-size: 1rem;
+}
+.md {
+    
+    font-size: 2rem;
+}
+.lg {
+    
+    font-size: 3rem;
+}
+.xl {
+    font-size: 4rem;
 }
 
 .btn-outline {
