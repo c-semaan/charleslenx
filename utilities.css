@@ -39,6 +39,24 @@
     color: #333;
 }
 
+/* Text Colors */
+.text-primary
+ {
+    color: var(--primary-color);
+}
+
+.text-secondary{
+    color: var(--secondary-color);
+}
+
+.text-dark {
+    color: var(--dark-color);
+}
+.text-light {
+    color: var(--light-color);
+}
+
+
 .bg-primary a,
 .btn-primary a,
 .bg-secondary a,
@@ -81,6 +99,7 @@ color: white;
 
 .btn:hover {
     transform: scale(0.98);
+    font-weight: 500;
 }
 
 .text-center {
@@ -200,3 +219,24 @@ grid-template-columns: repeat(3, 1fr);
 .p-5 {
     padding: 4rem 0;
 }
+
+.alert {
+    background-color: var(--light-color);
+    padding: 10px 20px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.alert-success{
+    background-color: var(--success-color);
+    color: white;
+}
+.alert-error{
+    background-color: var(--error-color);
+    color: white;
+}
+
+.alert i{
+    margin-right: 10px;
+}
+
