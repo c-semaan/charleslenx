@@ -1,4 +1,6 @@
 /*Utility Classes*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
 
 .card {
     background-color: white;
@@ -223,10 +225,16 @@ grid-template-columns: repeat(3, 1fr);
 .alert {
     background-color: var(--light-color);
     padding: 10px 20px;
-    font-weight: bold;
     margin: 15px 0;
 }
+.alert a {
+    color:#4886f4;
 
+}
+
+.alert-neutral{
+    background-color: var(--dark-color);
+}
 .alert-success{
     background-color: var(--success-color);
     color: white;
@@ -240,3 +248,20 @@ grid-template-columns: repeat(3, 1fr);
     margin-right: 10px;
 }
 
+.resumeRef {
+    color: #333;
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    line-height: 1.6;
+    /*optional*/
+    font-family: 'Lato', sans-serif;
+    /*input has OS specific font-family*/
+    cursor: pointer;
+    font-size: medium;
+  }
+
+  .resumeRef:hover {
+    font-weight: bold;
+    color: var(--primary-color);
+    }

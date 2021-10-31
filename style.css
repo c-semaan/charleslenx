@@ -271,6 +271,31 @@ margin-right: 20px;
     font-weight: bold;
 }
 
+.companyFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#workDate{
+    color: #ff6200;
+}
+.workDuties{
+    list-style: none;
+    margin-left: 25px;
+    margin-top: 5px;
+
+
+}
+.duty::before{
+    content: "\27A4";
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+#companyName{
+    font-weight: bold;
+}
+
 code , pre {
     background-color: #333;
     color: white;
