@@ -232,6 +232,7 @@ grid-template-columns: repeat(3, 1fr);
 
 }
 
+
 .alert-neutral{
     background-color: var(--dark-color);
 }
@@ -260,6 +261,12 @@ grid-template-columns: repeat(3, 1fr);
     cursor: pointer;
     font-size: medium;
   }
+
+.resumeRef.active{
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: default;
+}
 
   .resumeRef:hover {
     font-weight: bold;
