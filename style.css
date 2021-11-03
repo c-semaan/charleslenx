@@ -234,7 +234,7 @@ body > section.showcase > div > div.showcase-form.card > input{
 }
 
 .features-main .card > i {
-margin-right: 20px;
+    margin-right: 20px;
 }
 
 .features-main .grid > *:first-child {
@@ -455,9 +455,18 @@ code , pre {
     
     .showcase-form {
       width: 300px;
-      animation: slideInFromBottom 1s ease-in;
+      animation: slideInFromBottom 1s ease-in;}
 
-      
+    .docs-main .grid {
+        background-color: red;
+        /* height: 100%; */
+
     }
+    .docs-main {
+        width: 300px;
+        height: auto;
+        margin: auto;
+    }
+
   }
 

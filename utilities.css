@@ -1,6 +1,6 @@
 /*Utility Classes*/
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .card {
     background-color: white;
@@ -139,6 +139,8 @@ color: white;
 
 .grid-3 {
 grid-template-columns: repeat(3, 1fr);
+padding-top: 10px;
+padding-bottom: 10px;
 }
 
 /* Margin*/
@@ -272,3 +274,57 @@ grid-template-columns: repeat(3, 1fr);
     font-weight: bold;
     color: var(--primary-color);
     }
+
+.blockquote {
+    color: white;
+    
+    background-color: #ff4377;
+    border-radius: 10px;
+    /* border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    border-left: 0.5px solid white;
+    padding: 10px 20px 10px 20px;
+    width: 600px;
+    margin: 10px;
+}
+
+.blockquote--bordered{
+border-left-width: 10px;
+}
+.blockquote--quoted::before{
+    content: "\201c";
+    font-size: 75px;
+    color: white;
+    display: block;
+    margin-bottom: -40px;
+    margin-top: -20px;
+}
+.quoteText{
+    font-size: large;
+    font-style: italic;
+    font-family: 'Gelasio', serif;
+    margin: 5px;
+
+
+}
+
+.quoteText:not(:last-child){
+    margin-bottom: 1em;
+}
+
+.quoteAuthor {
+    font-weight: bold;
+    font-style: normal;
+    text-align: right;
+}
+
+.quoteAuthor::before {
+    content: "\2014\0020"
+}
+
+
+
+
+
+
