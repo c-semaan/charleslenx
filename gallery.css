@@ -12,14 +12,18 @@
   grid-template-rows: auto;
   grid-gap: 10px;
   grid-template-areas:
+    "h2 h2 h2"
+    "p p p"
     "img1 img2 img3"
-    "img4 img5 img3"
-    "img7 img8 img9"
-    "img6 - -";
+    "img4 img4 img4"
+    "img5 img6 img7"
+    "img8 img9 img7"
+    "img10 img11 img12"
+    "img13 img14 img14" ;
 }
 
 #index-gallery .gallery-img {
-  /* width: 100%; */
+  width: 100%;
   height: 300px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,6 +32,12 @@
   border-radius: 5px;
 }
 
+#index-gallery p {
+  grid-area: p;
+}
+#index-gallery h2 {
+  grid-area: h2;
+}
 #index-gallery .img1 {
   grid-area: img1;
   background-image: url("img/thumbs/img1.jpg");
@@ -38,7 +48,6 @@
 }
 #index-gallery .img3 {
   grid-area: img3;
-  height: 610px;
   background-image: url("img/thumbs/img3.jpg");
 }
 #index-gallery .img4 {
@@ -56,6 +65,7 @@
 #index-gallery .img7 {
   grid-area: img7;
   background-image: url("img/thumbs/img7.jpg");
+  height: 610px;
 }
 #index-gallery .img8 {
   grid-area: img8;
@@ -64,6 +74,26 @@
 #index-gallery .img9 {
   grid-area: img9;
   background-image: url("img/thumbs/img9.jpg");
+}
+#index-gallery .img10 {
+  grid-area: img10;
+  background-image: url("img/thumbs/img10.jpg");
+}
+#index-gallery .img11 {
+  grid-area: img11;
+  background-image: url("img/thumbs/img11.jpg");
+}
+#index-gallery .img12 {
+  grid-area: img12;
+  background-image: url("img/thumbs/img12.jpg");
+}
+#index-gallery .img13 {
+  grid-area: img13;
+  background-image: url("img/thumbs/img13.jpg");
+}
+#index-gallery .img14 {
+  grid-area: img14;
+  background-image: url("img/thumbs/img14.jpg");
 }
 
 .gallery-img div {
@@ -107,8 +137,9 @@
 }
 
 .img-window img {
-  max-height: 80vh;
-  max-width: 80vw;
+  max-height: 95vh;
+  max-width: 90vw;
+  object-fit: contain;
 }
 
 /* Next AND PREVIOUS BUTTONS */

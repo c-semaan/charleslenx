@@ -63,7 +63,7 @@ const esportDuties = {
   firstRole: "Creator & Organizer",
   duties: [
     [
-      "Organized and managed an independent eSport competition for” League of Legends” that was featured on national television, with the help of Gamezone in Dekawneh Lebanon. The event was sponsored by Redbull, Razr, Thermaltake and Kingston."
+      "Organized and managed an independent eSport competition for ”League of Legends” that was featured on national television, with the help of Gamezone in Dekawneh Lebanon. The event was sponsored by Redbull, Razr, Thermaltake and Kingston."
     ],
   ],
   date: "July 2014 (Dekwaneh, Lebanon)",
@@ -82,13 +82,25 @@ const ebookDuties = {
   link: "http://apple.co/1XbOHAs",
 };
 
+const iosAPP = {
+  name: "iOS Mobile Application",
+  firstRole: "Developer",
+  duties: [
+    [
+      ""
+    ],
+  ],
+  date: "March 2016",
+  link: "http://apple.co/1XbOHAs",
+};
 
+const initialHTML = document.getElementById("rightCard").innerHTML
 var btn = document.getElementsByClassName("resumeRef");
 const workExperience = Array.from(btn).slice(0, 4);
 const projects = Array.from(btn).slice(4, 8);
 const skills = Array.from(btn).slice(8, 11);
 const education = Array.from(btn).slice(11, 15);
-const languages = Array.from(btn).slice(15, 19);
+// const languages = Array.from(btn).slice(15, 19);
 
 
 for (var i = 0; i < btn.length; i++) {
@@ -111,6 +123,9 @@ for (var i = 0; i < btn.length; i++) {
       break;
     case 5:
       ebook();
+      break;
+    case 15:
+      languages();
       break;
   }
 }
@@ -190,7 +205,62 @@ function ebook() {
   });
 }
 
+function languages(){
+  btn[15].addEventListener("click", function(){
+    event.preventDefault();
+    setActiveTab(btn[15]);
+    const rightCard = document.getElementById("rightCard");
+    rightCard.innerHTML = "";
+    
+    
+    /*ELEMENTS*/
+
+    /*TITLE*/
+    const title = document.createElement('h2');
+    title.setAttribute("id", "companyName");
+    title.innerText = "Language Proficiency";
+
+    const progressTitles = ["English","Arabic","French","Russian"];
+
+    /*PROGRESS BAR*/
+    const skillsBar = document.createElement("div");
+    skillsBar.className = "skills-bar";
+
+    for (let i =0; i < 4; i++){
+      
+      const bar = document.createElement("div");
+      bar.className = "bar";
+
+      const info = document.createElement("div");
+      info.className = "info";
+      const text1 = document.createElement("span");
+      text1.innerText = progressTitles[i];
+      info.appendChild(text1);
+
+      const line = document.createElement("div");
+      line.className = `progress-line progress${i}`;
+      console.log("LINE CLASS NAME", line.className);
+      
+      const text2 = document.createElement("span");
+      line.appendChild(text2);
+
+
+      bar.appendChild(info);
+      bar.appendChild(line);
+
+      skillsBar.appendChild(bar);
+    }
+
+
+    
+    rightCard.appendChild(title);
+    rightCard.appendChild(skillsBar);
+  });
+}
+
 function workExp(btnIndex, work) {
+  document.getElementById("rightCard").innerHTML = initialHTML
+  
   try {
     const lists = document.querySelectorAll("[id=workList]");
     console.log('LISTS', lists);

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root { /*Global property*/
 
@@ -49,6 +50,7 @@ p {
     margin: 10px 0;
 }
 
+
 .logo span:after,
 .logo span::before{
     content: "\00a0\00a0\00a0\00a0\00a0";
@@ -59,6 +61,27 @@ p {
 img {
     width: 100%; /*Restrain image size to be equal to container size*/
     
+}
+
+#profileImage{
+ 
+    position: relative;
+    top: 60px;
+    height: 400px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100;
+    justify-self: flex-start;
+    animation: slideInFromLeft 1s ease-in;
+    /* padding: 10px;
+    border: 10px solid var(--dark-color); */
+}
+#profileImage > img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    /* padding: 10px; */
+    border: 10px solid var(--light-color);
 }
 
 .navbar {
@@ -422,8 +445,228 @@ code , pre {
 
   }
 
+/* PROGRESS BAR*/
+
+.skills-bar{
+    margin-top: 20px;
+    width: 100%;
+    background: #fff;
+    /* border-radius: 10px; */
+    /* padding: 20px 30px; */
+    /* box-shadow: 5px 5px 10px rgba(0,0,0,0.2); */
+}
+
+.skills-bar .bar {
+    margin: 20px 0;
+}
+
+.skills-bar .bar:first-child{
+    margin-top: 0px;
+}
+
+.skills-bar .bar .info span{
+    /* opacity: 0;
+    animation: showText1 0.5s 0.5s linear forwards;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden; */
+}
+.skills-bar .bar .info{
+margin-bottom: 5px;
+}
+
+
+.skills-bar .bar .progress-line{
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background: #f0f0f0;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.05),
+                      0px 1px rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    animation: animate 0.5s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+@keyframes animate {
+    100%{
+        transform: scaleX(1);
+    }
+}
+
+.bar .progress-line span {
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    background: var(--primary-color);
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 0.5s 0.5s cubic-bezier(1,0,0.5,1) forwards;
+
+}
+
+.bar .progress-line span::before {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: -11px;
+    height: 0;
+    width: 0;
+    border: 9px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #ff4377;
+    opacity: 0;
+    animation: showText2 0.25s 0.75s linear forwards;
+
+
+}
+.bar .progress-line span::after {
+    position: absolute;
+    content: "A2";
+    right: 0;
+    top: -28px;
+    font-size: 12px;
+    padding: 1px 8px;
+    background: #ff4377;
+    top: -28px;
+    color: white;
+    border-radius: 5px;
+    padding: 1px 8px;
+    border-radius: 3px;
+    opacity: 0;
+    animation: showText2 0.25s 0.75s linear forwards;
+
+}
+@keyframes showText2{
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes showText1{
+    100%{
+        opacity: 1;
+    }
+}
+
+.card.flex.app{
+/* background-color: green; */
+flex-direction: column;
+width: 100%;
+margin: 0px;
+}
+.card.flex.apple{
+    /* background-color: red; */
+    height: 150px;
+    margin: 0px;
+    box-shadow: none;
+    }
+.wrapper-gallery.app{
+    width: 100%;
+    height: 300px;
+    margin: 10px;
+    overflow: auto; /* sets the desired behavior for an element's overflow — i.e. when an element's content is too big to fit in its block formatting context — in both directions.*/
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.alert.apple{
+    margin: 0px;
+    width: 100%;
+    border-radius: 10px;
+}
+/* .alert.apple a{
+    font-family: 'Gelasio', serif;
+} */
+.alert.apple a:hover{
+    font-weight: bolder;
+    /* font-family: 'Gelasio', serif; */
+    border-bottom: 1px #4886f4 solid;
+}
+#index-gallery-app {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  grid-template-areas:
+    "img15 img16 img17 img18 img19";
+}
+#index-gallery-app .img15 {
+    grid-area: img15;
+    background-image: url("img/thumbs/img15.jpg");
+  }
+#index-gallery-app .img16 {
+    grid-area: img16;
+    background-image: url("img/thumbs/img16.jpg");
+  }
+#index-gallery-app .img17 {
+    grid-area: img17;
+    background-image: url("img/thumbs/img17.jpg");
+  }
+#index-gallery-app .img18 {
+    grid-area: img18;
+    background-image: url("img/thumbs/img18.jpg");
+  }
+#index-gallery-app .img19 {
+    grid-area: img19;
+    background-image: url("img/thumbs/img19.jpg");
+  }
+#index-gallery-app .gallery-img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+.progress-line.progress0 span::after{
+content: "C2";
+}
+.progress-line.progress1 span::after{
+content: "C2";
+}
+.progress-line.progress2 span::after{
+content: "C1";
+}
+.progress-line.progress3 span::after{
+content: "B1";
+}
+.bar .progress-line.progress-line.progress0 span{
+    width: 100%;
+}
+.bar .progress-line.progress-line.progress1 span{
+    width: 100%;
+}
+.bar .progress-line.progress-line.progress2 span{
+    width: 75%;
+}
+.bar .progress-line.progress-line.progress3 span{
+    width: 50%;
+}  
 /* Mobile */
 @media (max-width: 500px) {
+    #index-gallery {
+        grid-template-columns: 1fr;
+        padding: 1em;
+        grid-template-areas:
+        "img1" 
+        "img2" 
+        "img3" 
+        "img4" 
+        "img5" 
+        "img6" 
+        "img7" 
+        "img8" 
+        "img9" 
+        "img10" 
+        "img11" 
+        "img12" 
+        "img13"
+        "img14";
+    }
+    
     .showcase-text{
         animation: slideInFromTop 1s ease-in;
     }

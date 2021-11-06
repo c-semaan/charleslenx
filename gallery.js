@@ -1,4 +1,6 @@
 let galleryImages = document.querySelectorAll(".gallery-img");
+console.log("GalleryImages Array:", galleryImages);
+
 let latestOpenedImg;
 let windowWidth = window.innerWidth;
 
@@ -12,8 +14,11 @@ if (galleryImages) {
       let imgName = fullImgUrl.split("/img/thumbs/");
       let newImgUrl = imgName[1].replace('")', "");
       console.log(newImgUrl);
-
+      console.log("Loop current index", index);
+      
       latestOpenedImg = index + 1;
+      console.log("LatestOpenedImg:", latestOpenedImg);
+
 
       let container = document.body;
       let newImgWindow = document.createElement("div");
@@ -26,10 +31,11 @@ if (galleryImages) {
       newImg.setAttribute("src", "img/" + newImgUrl);
       newImg.setAttribute("id", "current-img");
 
+      if(document.URL.includes("hobbies.html")){
       newImg.onload = function () {
         let imgWidth = this.width;
         // let calImgToEdge = ((windowWidth - imgWidth) / 2) -(((windowWidth - imgWidth) / 2) * 30)/100;
-        let calImgToEdge = (windowWidth - imgWidth) / 2 - 80;
+        let calImgToEdge = ((windowWidth - imgWidth) / 2) - 80;
         console.log(calImgToEdge);
 
         let prevBtn = document.createElement("a");
@@ -48,6 +54,7 @@ if (galleryImages) {
         nextBtn.style.cssText = `right:${calImgToEdge}px`;
         prevBtn.style.cssText = `left:${calImgToEdge}px`;
       };
+    }
     };
   });
 }
@@ -59,6 +66,7 @@ function closeImg() {
 }
 
 function changeImg(changeDir) {
+  
   document.querySelector("#current-img").remove();
 
   let getImgWindow = document.querySelector(".img-window");
@@ -69,18 +77,25 @@ function changeImg(changeDir) {
 
   if (changeDir === 1) {
     calcNewImg = latestOpenedImg + 1;
+    console.log("Next Button pressed");
     if (calcNewImg > galleryImages.length) {
       calcNewImg = 1;
     }
   } else if (changeDir === 0) {
+    console.log("Prev Button pressed");
+    console.log();
+    
     calcNewImg = latestOpenedImg - 1;
     if (calcNewImg < 1) {
       calcNewImg = galleryImages.length;
-    }
+    }  
   }
-
+  console.log(calcNewImg);
+  
   newImg.setAttribute("src", `img/img${calcNewImg}.jpg`);
+
   newImg.setAttribute("id", "current-img");
+  
   latestOpenedImg = calcNewImg;
 
   newImg.onload = function () {
