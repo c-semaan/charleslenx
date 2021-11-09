@@ -94,6 +94,60 @@ const iosAPP = {
   link: "http://apple.co/1XbOHAs",
 };
 
+const bachelor = {
+  name: "Information Technology & Computing",
+  firstRole: "Arab Open University",
+  duties: [
+    [
+      "Graduated with second degree honors and a GPA of 3.67"
+    ]
+  ],
+
+  date: "Sept 2015 - Sept 2019",
+  link: "https://web.aou.edu.lb/",
+};
+
+const master = {
+  name: "Software Engineering",
+  firstRole: "Ural Federal University",
+  duties: [
+    [
+      "Expected graduation date in Q4 2022"
+    ]
+  ],
+
+  date: "Sept 2019 - In Progress (Distance Learning)",
+  link: "https://urfu.ru/en/",
+};
+
+const programmingLanguages = {
+  name: "Programming Languages & Technologies",
+  firstRole: "Languages",
+  secondRole: "Technologies/Frameworks",
+  duties: [
+    [
+      "Java",
+      "Javascript",
+      "HTML",
+      "CSS",
+      "Swift"
+    ],
+    [
+      "React",
+      "Bootstrap",
+      "NodeJS",
+      "REST API",
+      "MYSQL",
+      "PHP",
+      "Github"
+    ]
+  ],
+
+  date: "Sept 2019 - In Progress (Distance Learning)",
+  link: "https://urfu.ru/en/",
+};
+
+
 const initialHTML = document.getElementById("rightCard").innerHTML
 var btn = document.getElementsByClassName("resumeRef");
 const workExperience = Array.from(btn).slice(0, 4);
@@ -119,12 +173,23 @@ for (var i = 0; i < btn.length; i++) {
       dunkin();
       break;
     case 4:
-      esport();
+      programming();
       break;
     case 5:
-      ebook();
+      software(5);
       break;
-    case 15:
+    case 6:
+      aou();
+      break;
+    case 7:
+      urfu();
+      break;
+    case 8:
+      coursera(8);
+      break;
+    case 9:
+      coursera(9);
+    case 10:
       languages();
       break;
   }
@@ -181,37 +246,36 @@ function dunkin() {
   });
 }
 
-function esport() {
-  btn[4].addEventListener("click", function () {
+
+function aou(){
+  btn[6].addEventListener("click", function () {
     event.preventDefault();
-    setActiveTab(btn[4]);
-    workExp(4, esportDuties);
+    setActiveTab(btn[6]);
+    workExp(6, bachelor);
 
 
-    document.getElementById("infoLink").innerText = esportDuties.link;
-    document.getElementById("infoLink").href = esportDuties.link;
+    document.getElementById("infoLink").innerText = bachelor.link;
+    document.getElementById("infoLink").href = bachelor.link;
   });
 }
-
-function ebook() {
-  btn[5].addEventListener("click", function () {
+function urfu(){
+  btn[7].addEventListener("click", function () {
     event.preventDefault();
-    setActiveTab(btn[5]);
-    workExp(5, ebookDuties);
+    setActiveTab(btn[7]);
+    workExp(7, master);
 
 
-    document.getElementById("infoLink").innerText = ebookDuties.link;
-    document.getElementById("infoLink").href = ebookDuties.link;
+    document.getElementById("infoLink").innerText = master.link;
+    document.getElementById("infoLink").href = master.link;
   });
 }
 
 function languages(){
-  btn[15].addEventListener("click", function(){
+  btn[10].addEventListener("click", function(){
     event.preventDefault();
-    setActiveTab(btn[15]);
+    setActiveTab(btn[10]);
     const rightCard = document.getElementById("rightCard");
     rightCard.innerHTML = "";
-    
     
     /*ELEMENTS*/
 
@@ -257,6 +321,123 @@ function languages(){
     rightCard.appendChild(skillsBar);
   });
 }
+
+function programming(){
+  btn[4].addEventListener("click", function(){
+      event.preventDefault();
+      setActiveTab(btn[4]);
+      workExp(4, programmingLanguages);
+  
+  
+      document.getElementById("workDate").remove();
+      document.querySelector(".alert").remove();
+  });
+}
+
+function coursera(btnIndex){
+  const courseDescription = ['Apply core software engineering practices at conceptual level for a given problem','Compare and contrast traditional, agile, and lean development methodologies at high level. These include Waterfall, Rational Unified Process, V model, Incremental, Spiral models and overview of agile mindset','Propose a methodology best suited for a given situation'];
+  const courseDescription2 = ['Define project management and describe what constitutes a project',
+  'Explore project management roles and responsibilities across a variety of industries',
+  'Detail the core skills that help a project manager be successful',
+  'Describe the life cycle of a project and explain the significance of each phase',
+  'Compare different program management methodologies and approaches and determine which is most effective for a given project',
+  'Define organizational structure and culture and explain how it impacts project management',
+  'Define change management and describe the role of the project manager in the process'];
+  const imgSrc = ["miscImages/certificate1.jpg","miscImages/certificate2.jpg"];
+  const courseraUrl =  ["https://coursera.org/share/c6985cbd1c20cc3d7391609f4221ca7a","https://coursera.org/share/390ab8c90d17d4366796f014acddde11"];
+
+  btn[btnIndex].addEventListener("click", function(){
+    event.preventDefault();
+    setActiveTab(btn[btnIndex]);
+    const rightCard = document.getElementById("rightCard");
+    rightCard.innerHTML = "";
+
+    /*Create Elements*/
+    const title = document.createElement('h2');
+    title.setAttribute("id", "companyName");
+    title.innerText = btn[btnIndex].innerText;
+
+    const description = document.createElement('p');
+    description.innerText = "In this course, I learned the following:"
+
+    /*Alert*/
+    const alert = document.createElement("div");
+    alert.className = "alert";
+    var div = document.createElement("div");
+    div.id =  "workList";
+    var list = document.createElement("ul");
+    list.className = "workDuties";
+    
+
+    if(btnIndex === 8 ){
+    alert.innerHTML = `<i class="fas fa-info"></i> <a id= "infoLink" href=" ${courseraUrl[0]}" target="_blank"> ${courseraUrl[0]}</a>`;
+    for (let i = 0; i < courseDescription.length; i++) {
+      var li = document.createElement("li");
+      li.className = "duty";
+      li.innerText = courseDescription[i];
+      list.appendChild(li);
+    }
+    } else {
+      alert.innerHTML = `<i class="fas fa-info"></i> <a id= "infoLink" href=" ${courseraUrl[1]}" target="_blank"> ${courseraUrl[1]}</a>`;
+      for (let i = 0; i < courseDescription2.length; i++) {
+        var li = document.createElement("li");
+        li.className = "duty";
+        li.innerText = courseDescription2[i];
+        list.appendChild(li);
+      }
+    }
+    
+    div.appendChild(list);
+
+    rightCard.appendChild(title);
+    rightCard.appendChild(description);
+    rightCard.appendChild(div);
+    
+    rightCard.append(alert);
+
+
+});
+}
+function software(btnIndex){
+  const softwareList = ['Microsoft Office Packages','Adobe Premiere, Photoshop, Lightroom','Productivity: Slack, Trello, Notion', 'Helpdesk: ZenDesk, LiveTEX, LiveChat'];
+
+  btn[btnIndex].addEventListener("click", function(){
+    event.preventDefault();
+    setActiveTab(btn[btnIndex]);
+    const rightCard = document.getElementById("rightCard");
+    rightCard.innerHTML = "";
+
+    /*Create Elements*/
+    const title = document.createElement('h2');
+    title.setAttribute("id", "companyName");
+    title.innerText = btn[btnIndex].innerText;
+
+    const description = document.createElement('p');
+    description.innerText = "In this course, I learned the following:"
+
+    /*Alert*/
+    var div = document.createElement("div");
+    div.id =  "workList";
+    var list = document.createElement("ul");
+    list.className = "workDuties";
+
+      for (let i = 0; i < softwareList.length; i++) {
+        var li = document.createElement("li");
+        li.className = "duty";
+        li.innerText = softwareList[i];
+        list.appendChild(li);
+      }
+    
+    div.appendChild(list);
+
+    rightCard.appendChild(title);
+    rightCard.appendChild(description);
+    rightCard.appendChild(div);
+
+});
+}
+
+
 
 function workExp(btnIndex, work) {
   document.getElementById("rightCard").innerHTML = initialHTML

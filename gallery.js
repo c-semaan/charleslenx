@@ -39,14 +39,14 @@ if (galleryImages) {
         console.log(calImgToEdge);
 
         let prevBtn = document.createElement("a");
-        let prevBtnText = document.createTextNode("<");
+        let prevBtnText = document.createTextNode("Previous");
         prevBtn.appendChild(prevBtnText);
         container.appendChild(prevBtn);
         prevBtn.setAttribute("class", "img-btn-prev");
         prevBtn.setAttribute("onclick", "changeImg(0)");
 
         let nextBtn = document.createElement("a");
-        let nextBtnText = document.createTextNode(">");
+        let nextBtnText = document.createTextNode("Next");
         nextBtn.appendChild(nextBtnText);
         container.appendChild(nextBtn);
         nextBtn.setAttribute("class", "img-btn-next");

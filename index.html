@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="utilities.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://kit.fontawesome.com/5ef26b1380.js" crossorigin="anonymous"></script>
     <title>Charles Semaan</title>
 </head>
@@ -18,10 +21,10 @@
             <h1 class="logo"><span>Charles Semaan</span> </h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="hobbies.html">Hobbies</a></li>
-                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="index.html" class="MenuButtons">Home</a></li>
+                    <li><a href="projects.html" class="MenuButtons">Projects</a></li>
+                    <li><a href="hobbies.html" class="MenuButtons">Hobbies</a></li>
+                    <li><a href="resume.html" class="MenuButtons">Resume</a></li>
 
                 </ul>
             </nav>
@@ -32,14 +35,14 @@
     <section class="showcase">
         <div class="container grid">
             <div class="showcase-text">
-                
+
                 <div id="profileImage"><img src="miscImages/MEBlack.jpg"></img></div>
                 <!-- <a href="projects.html" class="btn btn-outline">Read More</a> -->
             </div>
 
             <div class="showcase-form card">
                 <h2>Request Information/Reference</h2>
-                 <form>
+                <form>
                     <div class="form-control">
                         <input type="text" name="name" placeholder="Name" required>
                     </div>
@@ -51,18 +54,18 @@
                     </div>
                     <input type="submit" value="Send" class="btn btn-primary">
 
-                    
+
                 </form>
 
             </div>
         </div>
     </section>
 
-      <!-- Stats -->
-      <section class="stats">
+    <!-- Stats -->
+    <section class="stats">
         <div class="container">
             <h3 class="stats-heading text-center my-1">
-                Welcome to my personal website! I am happy to share with you my professional experience and also what I enjoy doing in life
+                Welcome to my personal website! I am Charles Semaan and I go by the nickname Charles Lenx. I was born and raised in beautiful Lebanon. I lived in the 90s for four years. Currently, I am based in Yekaterinburg, Russia. 
             </h3>
 
             <div class="grid grid-3 text-center my-4">
@@ -133,18 +136,28 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Professional Experience</a></li>
+                    <li><a href="projects.html">Projects</a></li>
                     <li><a href="hobbies.html">Hobbies</a></li>
                     <li><a href="resume.html">Resume</a></li>
                 </ul>
             </nav>
             <div class="social">
                 <a href="https://github.com/c-semaan/" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                <a href="https://lb.linkedin.com/in/charles-semaan-9640ba156" target="_blank"><i class="fab fa-linkedin-in fa-2x"></i></a>
-                <a href="https://www.instagram.com/charleslenx/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://lb.linkedin.com/in/charles-semaan-9640ba156" target="_blank"><i
+                        class="fab fa-linkedin-in fa-2x"></i></a>
+                <a href="https://www.instagram.com/charleslenx/" target="_blank"><i
+                        class="fab fa-instagram fa-2x"></i></a>
                 <a href="https://vk.com/charleslenx" target="_blank"><i class="fab fa-vk fa-2x"></i></a>
             </div>
         </div>
     </footer>
+    <script src="main.js"></script>
+    <script type="text/javascript">
+
+                const navButton = document.getElementsByClassName("MenuButtons");
+                navButton[0].classList.add("clicked");
+
+    </script>
 </body>
+
 </html>

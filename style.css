@@ -98,6 +98,11 @@ img {
 .navbar a:hover {
     border-bottom: 2px #fff solid;
 }
+
+.MenuButtons.clicked{
+    border-bottom: 2px #fff solid;
+}
+
 .footer ul a:hover {
     border-bottom: 1px #fff solid;
 
@@ -126,6 +131,7 @@ margin-bottom: 5px;
 }
 .showcase-text{
     animation: slideInFromLeft 1s ease-in;
+    z-index: 100;
 }
 .showcase h1 {
     font-size: 40px;
@@ -194,9 +200,9 @@ body > section.showcase > div > div.showcase-form.card > input{
 }
 
 .stats-heading {
-    width: 75%;
+    width: 80%;
     margin: auto;
-    font-size: 20px;
+    font-size: 25px;
 
 }
 
@@ -260,13 +266,17 @@ body > section.showcase > div > div.showcase-form.card > input{
     margin-right: 20px;
 }
 
-.features-main .grid > *:first-child {
+.features-main .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+/* .features-main .grid > *:first-child {
     grid-column:  1 / span 3;
     }
 
 .features-main .grid > *:nth-child(2) {
-        grid-column:  1 / span 2;
-        }
+        grid-column:  1 / span 3;
+    } */
 
 /*  Resume */
 .docs-main h3 {
@@ -645,6 +655,112 @@ content: "B1";
 .bar .progress-line.progress-line.progress3 span{
     width: 50%;
 }  
+
+.svgContainer {
+    justify-self: flex-end;
+}
+
+.svgAnimate.svgResume path{
+    fill: transparent;
+    stroke-width: 1;
+    stroke: var(--dark-color);;
+    stroke-dasharray: 2650;
+    stroke-dashoffset: 2650;
+}
+
+.svgAnimate.svgResume path{
+    animation: animate-resume 2.5s linear forwards;
+}
+
+.svgAnimate.svgHeart path{
+    fill: transparent;
+    stroke-width: 4;
+    stroke: #ffd700;
+    stroke-dasharray: 2650;
+    stroke-dashoffset: 2650;
+}
+
+.svgAnimate.svgHeart path{
+    animation: animate-heart 2.5s linear forwards;
+}
+
+@keyframes animate-resume {
+    0%{
+        stroke-dashoffset: 2650;
+
+    }
+    20%{
+        stroke-dashoffset: 2650;
+
+    }
+    40%{
+        stroke-dashoffset: 1590;
+        fill:transparent;
+
+    }
+    60%{
+        stroke-dashoffset: 1060;
+        fill: var(--dark-color);
+
+    }
+    80%{
+        stroke-dashoffset: 530;
+        fill: var(--dark-color);
+
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: var(--dark-color);
+    }
+}
+@keyframes animate-heart {
+    0%{
+        stroke-dashoffset: 2650;
+
+    }
+    20%{
+        stroke-dashoffset: 2650;
+
+    }
+    40%{
+        stroke-dashoffset: 1590;
+        fill:transparent;
+
+    }
+    60%{
+        stroke-dashoffset: 1060;
+        fill: #ffd700;
+
+    }
+    80%{
+        stroke-dashoffset: 530;
+        fill: #ffd700;
+
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: #ffd700;
+    }
+}
+
+.downloadResume:hover {
+    color: white;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+.downloadResume {
+    padding: 10px;
+    color: var(--primary-color);
+    background-color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+}
+.downloadContainer{
+    display: flex;
+    justify-content: center;
+}
+
 /* Mobile */
 @media (max-width: 500px) {
     #index-gallery {
