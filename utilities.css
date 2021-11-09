@@ -125,8 +125,6 @@ color: white;
     align-items: center; 
     height: 100%;
     overflow: hidden; 
-    /*    justify-content center -> Main axis || align-items -> Cross axis
-     */
     }
 
 .grid {
