@@ -178,3 +178,25 @@
 .img-btn-prev:hover {
   opacity: 0.8;
 }
+
+@media (max-width: 500px) {
+  #index-gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+   }
+   .lg {
+     font-size: 2rem;
+   }
+  .img-btn-prev{
+    top: 80vh !important;
+    left: 20% !important;
+    }
+    .img-btn-next{
+      top: 80vh !important;
+      right: 20% !important;
+      }
+}
+ 

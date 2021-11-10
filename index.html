@@ -89,13 +89,12 @@
 
     <!-- Cloud -->
     <section class="cloud bg-primary my-2 py-2">
-        <div class="container grid">
+        <div class="container flex">
             <div class="text-center">
-                <h2 class="lg">Extreme Cloud Hosting</h2>
-                <p class="lead my-1">Cloud hosting like you've never seen. Fast, efficient and scalable</p>
-                <a href="features.html" class="btn btn-dark">Read more</a>
+                <img src="miscImages/birdfree.png" style = "color: white;height: 350px;width: 350px;">
+                <p class="lead my-1">Technical background with an artist' spirit looking to transcend my limits and leave a big imprint on people and in my field.</p>
+                <a href="hobbies.html" class="btn btn-dark">Read more</a>
             </div>
-            <img src="images/cloud.png" alt="">
         </div>
     </section>
 
@@ -142,7 +141,7 @@
         </div>
     </section>
 
-    <!-- Languages -->
+    <!-- Languages
     <section class="languages">
         <h2 class="md text-center my-2">Supported Languages</h2>
         <div class="container flex">
@@ -151,28 +150,33 @@
                 <img src="img/img1.jpg" alt="">
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="contactForm flex">
     <div class="showcase-form card">
         <h2 style="font-weight: bold;">Get in touch</h2>
-        <p class="lead">Work inquiries, information request, funny jokes, or just saying hi 👇</p>
-        <form>                    
+        <p class="lead">Work inquiries, information request, funny jokes, or just dropping by 👇</p>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">   
+            <p class="hidden">
+                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+              </p>                 
 
-            <div class="form-control">
-                <input type="text" name="name" placeholder="Name" required>
+            <div class="form-name">
+                <input type="text" name="name" placeholder="Name" required AcceptsReturn="True" >
             </div>
-            <div class="form-control">
-                <input type="text" name="company" placeholder="Company Name" required>
+            <div class="form-company">
+                <input type="text" name="company" placeholder="Company Name (optional)" AcceptsReturn="True" >
             </div>
-            <div class="form-control">
-                <input type="email" name="email" placeholder="Email" required>
+            <div class="form-email">
+                <input type="email" name="email" placeholder="Email" required AcceptsReturn="True" >
             </div>
-            <div class="formbody">
-                <input type="text" name="body" placeholder="Body" required>
+            <div class="form-body">
+                <textarea id="multiliner" name="multiliner" AcceptsReturn="True"></textarea>
             </div>
-            <input type="submit" value="Send" class="btn btn-primary">
-
+            <div class = "flex">
+            <input type="submit" value="Send" class="downloadResume">
+             </div>
 
         </form>
 
@@ -213,5 +217,4 @@
 
     </script>
 </body>
-
 </html>
